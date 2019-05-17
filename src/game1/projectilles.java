@@ -20,7 +20,7 @@ public class projectilles {
 	}
 	
 	public void draw(Graphics g) {
-		g.setColor(Color.white);
+		g.setColor(Color.black);
 		g.fillOval(x, y, 6, 6);
 		
 	}

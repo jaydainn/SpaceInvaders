@@ -22,12 +22,18 @@ public class main extends BasicGame {
 
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException {
+		g.setBackground(Color.white);
 		for (int i = 0; i < e.size(); i++) {
 			e.get(i).draw(g);
 		}
 		v.draw(g);
 		for(int i = 0 ; i < p.size();i++) {
 			p.get(i).draw(g);
+		}
+		if(e.size() == 0) {
+			g.setColor(Color.pink);
+			g.drawString("You Win", 270, 240);
+			
 		}
 	}
 
@@ -69,6 +75,7 @@ public class main extends BasicGame {
 			p.get(i).deplacer(delta);
 			if(p.get(i).horsEcran()) {
 				p.remove(i);
+				break;
 			}
 			for(int j = 0 ; j < e.size();j++) {
 				if(p.get(i).testCollision(e.get(j))) {
@@ -80,6 +87,7 @@ public class main extends BasicGame {
 		}
 		
 		
+		
 
 	}
 	
@@ -89,7 +97,7 @@ public class main extends BasicGame {
 		case Input.KEY_RIGHT : v.droite(); break;
 		case Input.KEY_SPACE: 
 			if(p.size()<5) {
-				p.add(new projectilles(v.getX()-22,v.getY()-25,50));
+				p.add(new projectilles(v.getX()-22,v.getY()-25,200));
 			}
 			break;
 			

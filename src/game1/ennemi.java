@@ -34,5 +34,7 @@ public class ennemi {
 		g.setColor(c);
 		g.fillRect(x, y, 30, 30);
 	}
+	
+	
 
 }

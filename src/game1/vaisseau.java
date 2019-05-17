@@ -13,7 +13,7 @@ public class vaisseau {
 	}
 
 	public void draw(Graphics g) {
-		g.setColor(Color.lightGray);
+		g.setColor(Color.black);
 		g.fillOval(x - 50, y - 20, 50, 20);
 	}
 
